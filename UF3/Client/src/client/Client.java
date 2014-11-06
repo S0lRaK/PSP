@@ -1,10 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/*==============================================================================
+ * Aplicació:
+ * Arxiu:
+ * Autor:               @author ${user}
+ * Data de creació:     
+ * Descripció:
+ *============================================================================*/
+
+// Paquet
 package client;
 
+// Imports
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -13,16 +18,13 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.util.Scanner;
 
-/**
- *
- * @author Carlos
- */
+// Classe principal
 public class Client
 {
+    // Constants
     private static final int PORT = 5000;
-    /**
-     * @param args the command line arguments
-     */
+    
+    // Punt d'entrada de l'aplicació
     public static void main(String[] args)
     {
         try
@@ -39,10 +41,16 @@ public class Client
             OutputStream os = socket.getOutputStream();
             ObjectOutputStream oos = new ObjectOutputStream(os);
             
-            System.out.println("Missatge: ");
+            // Envia un missatge al servidor
+            /*System.out.println("Missatge: ");
             String missatge = introDades.nextLine();
-            oos.writeObject(missatge);
+            oos.writeObject(missatge);*/
             
+            // Envia el nom de la màquina client al servidor
+            String nomHostLocal = InetAddress.getLocalHost().getHostName();
+            oos.writeObject(nomHostLocal);
+            
+            // Retorna des del servidor el missatge enviat
             InputStream is = socket.getInputStream();
             ObjectInputStream ois = new ObjectInputStream(is);
             String missatgeRetornat = (String)ois.readObject();
@@ -53,7 +61,8 @@ public class Client
         catch(Exception e)
         {
             System.out.println(e.toString() + "\n");
-            e.printStackTrace(); // Mostra la pila de trucades als mètodes
+            // Mostra la pila de trucades als mètodes
+            e.printStackTrace();
         }
     }
 }

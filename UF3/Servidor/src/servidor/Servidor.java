@@ -39,11 +39,13 @@ public class Servidor
                 InetAddress addressRemota = socketClient.getInetAddress();
                 System.out.println(addressRemota.getHostAddress());
                 
+                // Llegeix el missatge del client
                 InputStream is = socketClient.getInputStream();
                 ObjectInputStream ois = new ObjectInputStream(is);
                 String missatge = (String)ois.readObject();
                 System.out.println(missatge);
                 
+                // Retorna el mateix missatge al client
                 OutputStream os = socketClient.getOutputStream();
                 ObjectOutputStream oos = new ObjectOutputStream(os);
                 oos.writeObject(missatge);
