@@ -1,8 +1,8 @@
 /*==============================================================================
- * Aplicació:
- * Arxiu:
- * Autor:               @author ${user}
- * Data de creació:     
+ * Aplicació:           Client
+ * Arxiu:               Client.java
+ * Autor:               @author Carlos J. García Carmona
+ * Data de creació:     22/10/2014
  * Descripció:
  *============================================================================*/
 

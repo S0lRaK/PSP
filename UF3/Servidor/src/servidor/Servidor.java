@@ -1,10 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/*==============================================================================
+ * Aplicació:           Servidor
+ * Arxiu:               Servidor.java
+ * Autor:               @author Carlos J. García Carmona
+ * Data de creació:     22/10/2014
+ * Descripció:
+ *============================================================================*/
+
+// Paquet
 package servidor;
 
+// Imports
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
@@ -16,16 +21,13 @@ import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Carlos
- */
+// Classe principal
 public class Servidor
 {
+    // Constants
     private static final int PORT = 5000;
-    /**
-     * @param args the command line arguments
-     */
+    
+    // Punt d'entrada de l'aplicació
     public static void main(String[] args)
     {
         try
@@ -57,7 +59,8 @@ public class Servidor
         catch(Exception e)
         {
             System.out.println(e.toString() + "\n");
-            e.printStackTrace(); // Mostra la pila de trucades als mètodes
+            // Mostra la pila de trucades als mètodes
+            e.printStackTrace();
         }
 //        catch (IOException ex)
 //        {
