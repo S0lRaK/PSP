@@ -14,13 +14,14 @@ import java.util.Scanner;
  * Data de creació: 22-10-2014
  * @author Carlos J. García Carmona
  */
-public class RSA {
-
+public class RSA
+{
     /**
      * Punt d'entrada de l'aplicació amb les opcions del menú.
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         int opcio;
         
         // Mostra les opcions de menú fins a prèmer 0 (sortir)
@@ -114,20 +115,24 @@ public class RSA {
     */
     private static void opcioEncriptarArxiu()
     {
+        Scanner sc = new Scanner(System.in);
+        
         try
         {
-            // Avisa si les claus ja han estat generades
+            // Comprova que les claus ja han estat generades
             if(GestioArxius.clausGenerades())
             {
-                System.out.println("Les claus ja han estat generades prèviament.");
+                System.out.println("Arxiu a encriptar: ");
+                FileReader fr = new FileReader(sc.next());
+                System.out.println("Arxiu obert correctament.");
             }
-            // Si no hi han claus, es creen
+            // Si no hi han claus...
             else
             {
-                
+                System.out.println("Encara no hi ha clau per a encriptar!");
             }
             // Obre l'arxiu per llegir-lo
-            FileReader fr = new FileReader("quijote.txt");
+            //FileReader fr = new FileReader("quijote.txt");
         }
         // Excepció per quan l'arxiu a encriptar no es trobat
         catch(FileNotFoundException e){}
