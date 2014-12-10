@@ -258,3 +258,7 @@ $RECYCLE.BIN/
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/UF3/Xat/Client/nbproject/private/
+/UF3/Xat_senzill/Client/nbproject/private/
+/UF3/Xat_senzill/Servidor/nbproject/private/
+/UF2/Prova/nbproject/private/
